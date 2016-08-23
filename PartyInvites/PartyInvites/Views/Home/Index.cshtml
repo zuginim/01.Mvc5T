@@ -1,0 +1,30 @@
+﻿
+@{ Layout = null;}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <!-- 16.08.21 부트스트랩 디자인 적용을 위한 참조.-->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+    <!-- 16.08.21 부트스트랩 디자인 적용.-->
+    <article class="text-center"> 
+        <!-- 16.08.21 Controller ViewBag 사용.-->
+        @ViewBag.Greetiong World (from the view)
+        <p>파티를 개최할 예정입니다 아래의 버튼을 통해 회신 부탁드립니다.</p>
+        <!-- 16.08.21 헬퍼메서드.-->
+        <!-- 16.08.21 부트스트랩 디자인 적용.-->
+        <div class="btn btn-success">
+            @Html.ActionLink("RSVP Now", "RsvpForm")
+        </div>
+    </article>
+</body>
+</html>
