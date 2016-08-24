@@ -18,7 +18,7 @@ namespace EssentialTools.Controllers
 
         public ActionResult Index() {
 
-            LinqValueCalculator calc = new LinqValueCalculator();
+            IValueCalculator calc = new LinqValueCalculator();
 
             ShoppingCart cart = new ShoppingCart(calc) { Products = products };
 
@@ -28,7 +28,7 @@ namespace EssentialTools.Controllers
         }
         
         public ActionResult Exam() {
-
+            
             //16.08.24 의문1 : 이렇게 해도 되는거 같은데 왜 구지 위와같이 하는건지..
             LinqValueCalculator calc_exam = new LinqValueCalculator();
             decimal test = calc_exam.ValueProducts(products);
