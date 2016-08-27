@@ -51,7 +51,6 @@ namespace SportsStore.WebUI.App_Start
         /// Load your modules or register your services here!
         /// </summary>
         /// <param name="kernel">The kernel.</param>
-        /// 16.08.24 NinjectDependencyResolver 클래스와 의존성주입 컨테이너 간의 연결고리 구성.
         private static void RegisterServices(IKernel kernel)
         {
             System.Web.Mvc.DependencyResolver.SetResolver(new SportsStore.WebUI.Infrastructure.NinjectDependencyResolver(kernel));

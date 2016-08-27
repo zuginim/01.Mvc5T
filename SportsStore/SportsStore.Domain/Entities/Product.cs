@@ -8,7 +8,6 @@ namespace SportsStore.Domain.Entities
 {
     public class Product
     {
-        //16.08.24 상품속성.
         public int ProductID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
