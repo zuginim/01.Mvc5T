@@ -1,0 +1,48 @@
+﻿@model PartyInvites.Models.GuestResponse
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <!-- 16.08.21 부트스트랩 디자인 적용을 위한 참조. -->
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <title>Thanks</title>
+</head>
+<body>
+    <!-- smtp 발송.-->
+    @{ 
+        try {
+            WebMail.SmtpServer = "smtp.naver.com";
+            WebMail.SmtpPort = 465;
+            WebMail.EnableSsl = true;
+            WebMail.UserName = "testname";
+            WebMail.Password = "testpassword";
+            WebMail.From = "h_jiwook@naver.com";
+            WebMail.Send("h_jiwook@naver.com", "RSVP Notification", Model.Name + " is " + ((Model.WillAttend ?? false) ? "" : "not") + "attending");
+        }
+        catch (Exception) {
+            @:<b>죄송합니다. smtp 발송이 불가합니다.</b>
+        }
+    }
+    <header></header>
+    <nav></nav>
+    <section class="text-center"> 
+        <h1>감사합니다. @Model.Name!</h1>
+        <article class="lead">
+            @if (Model.WillAttend == true)
+            {
+                // 16.08.21 의미없는 텍스트는 @: 로 표시.
+                @: 감사합니다.
+            }
+            else
+            {
+                @: 알겠습니다.
+            }
+        </article>
+    </section>
+</body>
+</html>
