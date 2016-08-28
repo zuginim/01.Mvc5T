@@ -10,7 +10,15 @@ namespace DebuggingDEMO.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            //16.08.28
+            int firstVal = 10;
+            int secondVal = 0;
+            int result = firstVal / 2;
+
+            //16.08.28
+            //ViewBag.Message = "Welcome to ASP.NET MVC!";
+
+            return View(result);
         }
 
         public ActionResult About()

@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+/*16.08.28*/
+.message {
+    font-size: 20pt;
+    text-decoration: underline;
+}
